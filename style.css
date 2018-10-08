@@ -1,0 +1,13 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(192, 221, 232);
+}
+
+.container {
+  display: grid;
+}
+
+.grid-item {
+
+}

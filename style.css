@@ -1,13 +1,25 @@
 html, body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   background-color: rgb(192, 221, 232);
 }
 
 .container {
   display: grid;
+  justify-items: stretch;
+  width: fit-content;
+  height: fit-content;
+  margin-top: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  box-shadow: 1px 1px 50px rgb(0,0,0,0.2) inset;
 }
 
 .grid-item {
-
+  padding: 20px;
 }
+
+/* .grid-item:hover {
+  background: rgb(0,0,0,0.2);
+} */

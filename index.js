@@ -1,6 +1,6 @@
-// document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-let grid = 4;
+let grid = prompt("Choose a Number between 2 and 64", 16);
 
   function createPad(grid){
     const container = document.querySelector(".container");
@@ -8,29 +8,25 @@ let grid = 4;
     for(let i=0; i<(grid*grid); i++){
         const box = document.createElement("div");
         box.classList.add("grid-item");
-        box.setAttribute("name", "block");
         container.appendChild(box);
     }
   }
   createPad(grid);
 
-  const gridBlock = document.querySelectorAll(".grid-item");
+  const gridBlock = Array.from(document.querySelectorAll(".grid-item"));
+
 
   function hoverChange(e){
-    e.target.style.opacity = 0.1;
-    e.target.style.backgroundColor = "rgb(0,0,0)";
-  }
-
-  function opacIncr(e){
-    if(e.target.style.opacity < 1.0 && e.target.style.opacity === 0.1){
-      console.log("hello");
+    console.log(e.target.style)
+    if(e.target.style.opacity == ""){
+      e.target.style.opacity = 0.1
+    } else if(e.target.style.opacity < 1){
       e.target.style.opacity = parseFloat(e.target.style.opacity) + 0.1;
     }
   }
 
   for(let i=0;i<gridBlock.length;i++){
+    // gridBlock[i].setAttribute('id', `${i}`);
     gridBlock[i].addEventListener('mouseover', hoverChange);
   }
-// gridBlock[i].addEventListener('mouseover', opacIncr);
-
-// })
+})

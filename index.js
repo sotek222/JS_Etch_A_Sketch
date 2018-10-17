@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-let grid = prompt("Choose a Number between 2 and 64", 16);
+  let grid = prompt("Choose a Number between 2 and 64", 16);
+  let color = prompt("Pick a color", "black");
 
   function createPad(grid){
     const container = document.querySelector(".container");
@@ -14,10 +15,10 @@ let grid = prompt("Choose a Number between 2 and 64", 16);
   createPad(grid);
 
   const gridBlock = Array.from(document.querySelectorAll(".grid-item"));
-
+  const resetButton = document.querySelector(".reset_grid");
 
   function hoverChange(e){
-    console.log(e.target.style)
+    e.target.style.backgroundColor = color;
     if(e.target.style.opacity == ""){
       e.target.style.opacity = 0.1
     } else if(e.target.style.opacity < 1){
@@ -25,8 +26,12 @@ let grid = prompt("Choose a Number between 2 and 64", 16);
     }
   }
 
+  function resetGrid(e){
+    window.location.reload();
+  }
+
   for(let i=0;i<gridBlock.length;i++){
-    // gridBlock[i].setAttribute('id', `${i}`);
     gridBlock[i].addEventListener('mouseover', hoverChange);
   }
+  resetButton.addEventListener('click', resetGrid);
 })

@@ -34,5 +34,19 @@ html, body {
 
 .grid-item{
   opacity: 0;
-  background-color: black;
+}
+
+.settings {
+  position: absolute;
+  margin: 132px;
+}
+
+.reset_grid {
+  padding: 5px 10px;
+  font-family: monospace;
+  font-size: 1em;
+  background-color: aliceblue;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px;
+  outline: none;
 }
